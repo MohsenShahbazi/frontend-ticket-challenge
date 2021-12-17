@@ -33,8 +33,12 @@
 header>nav>ul{
   list-style: none;
 }
-navbar{
-  text-align: center;
-  width: auto;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav{
   margin: 0 auto;
+  text-align: center;
 }

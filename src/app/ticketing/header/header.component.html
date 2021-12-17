@@ -9,17 +9,9 @@
     <div class="spacer"> </div>
 
     <nav class="navbar">
-      <!--      <ul>
-              <li>
-                <a href="/html/">HTML</a>
-              </li>
-              <li>
-                <a href="/html/">HTML</a>
-              </li>
-            </ul>-->
-      <a href="/html/">{{'HOME'|translate}}</a> |
-      <a href="/css/">{{'ABOUT'|translate}}</a> |
-      <a href="/js/">{{'CONTACT'|translate}}</a>
+      <a [routerLink]="'/home'">{{'HOME'|translate}}</a> |
+      <a [routerLink]="'/about'">{{'ABOUT'|translate}}</a> |
+      <a [routerLink]="'/contact'">{{'CONTACT'|translate}}</a>
     </nav>
 
 
