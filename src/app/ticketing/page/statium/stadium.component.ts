@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MapService} from "../../services/map.service";
 import {CommonService} from "../../../structure/service/common.service";
 import {TranslateService} from "@ngx-translate/core";
@@ -12,13 +12,25 @@ export class StadiumComponent implements OnInit {
   seatList: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   count: number = 100;
   // model to send selected seat for complete user reserve
-  reservationModel={};
+  reservationModel = {};
+  //seat model
+  mapModel: {};
+
   constructor(
-    private mapService:MapService,
-    private commonService:CommonService,
-    private translate:TranslateService) { }
+    private mapService: MapService,
+    private commonService: CommonService,
+    private translate: TranslateService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  //get special map data for show in template for select seats
+  getMap(): any {
+    this.mapService.get(1).subscribe((info: any) => {
+      this.mapModel = info;
+    })
+
   }
 
   initialStatiumShape(): any {
@@ -51,14 +63,14 @@ export class StadiumComponent implements OnInit {
   }
 
   //
-  check(item){
+  check(item) {
     console.log(item);
   }
 
   // reservation method send model to end point for submit user reserve
-  reservation():void{
+  reservation(): void {
     // submit ticket reserve with map service
-    this.mapService.add(this.reservationModel).subscribe((info:any)=>{
+    this.mapService.add(this.reservationModel).subscribe((info: any) => {
       //after success submit
       this.commonService.showSuccessMessage(
         this.translate.instant('SUCCESS_RESERVE').toString(),
