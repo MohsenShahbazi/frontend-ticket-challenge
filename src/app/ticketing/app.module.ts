@@ -10,9 +10,8 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {ToastrModule} from "ngx-toastr";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './page/contact/contact.component';
 import { HomeComponent } from './home/home.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -24,9 +23,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent,
     PagenotfoundComponent,
-    ContactComponent,
     HomeComponent
   ],
   imports: [
