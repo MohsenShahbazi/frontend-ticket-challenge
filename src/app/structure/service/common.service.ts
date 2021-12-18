@@ -15,19 +15,13 @@ export class  CommonService {
 
   isShowLoadingBar: boolean = false;
 
-  showInfoMessage(message: string | undefined, title: string | undefined) {
-    this.toasts.info(message,title);
-    return;
+
+  showSuccessMessage(message: string , title: string ):void {
+    this.toasts.success(message,title);
   }
 
-  showErrorMessage(message: string | undefined, title: string | undefined) {
+  showErrorMessage(message: string , title: string ):void {
     this.toasts.error(message,title);
-    return;
-  }
-
-  showMessage(message: string , title: string ) {
-    this.toasts.show(message,title);
-    return;
   }
 
   showLoadingBar(isShow: boolean) {

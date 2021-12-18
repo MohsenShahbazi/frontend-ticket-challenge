@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./contact/contact.module')
       .then(m => m.ContactModule),
   },
+  {
+    path: 'stadium',
+    loadChildren: () => import('./statium/stadium.module')
+      .then(m => m.StadiumModule),
+  },
 
 ];
 
