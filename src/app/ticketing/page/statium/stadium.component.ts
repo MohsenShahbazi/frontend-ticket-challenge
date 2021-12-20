@@ -11,10 +11,9 @@ import {TranslateService} from "@ngx-translate/core";
 export class StadiumComponent implements OnInit {
   seatList: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   count: number = 100;
-  // model to send selected seat for complete user reserve
-  reservationModel = {};
-  //seat model
   mapModel: {};
+  //selected seats list
+  selectedSeat:Array<number>=new Array<number>();
 
   constructor(
     private mapService: MapService,
@@ -62,15 +61,15 @@ export class StadiumComponent implements OnInit {
     }
   }
 
-  //
-  check(item) {
-    console.log(item);
+  //add selected seat to list for send to backend
+  check(item=null) {
+    this.selectedSeat.push(item);
   }
 
   // reservation method send model to end point for submit user reserve
   reservation(): void {
     // submit ticket reserve with map service
-    this.mapService.add(this.reservationModel).subscribe((info: any) => {
+    this.mapService.add(this.selectedSeat).subscribe((info: any) => {
       //after success submit
       this.commonService.showSuccessMessage(
         this.translate.instant('SUCCESS_RESERVE').toString(),

@@ -17,5 +17,6 @@
   "CONTACT": "تماس با ما",
   "RESERVE_TICKET": "رزرو بلیط",
   "RESERVE_OPERATION": "عملیات رزرو",
-  "SUCCESS_RESERVE": "رزرو شما با موفقیت انجام شد"
+  "SUCCESS_RESERVE": "رزرو شما با موفقیت انجام شد",
+  "SELECTED_SEAT": "صندلی های انختاب شده"
 }
